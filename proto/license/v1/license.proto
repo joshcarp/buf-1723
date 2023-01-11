@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package license.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+
+option go_package = "git.{xxx}.com/ms-public/sdk-grpc/langs/go/pb/license/v1";
+
+service LicenseService {
+  rpc GetAuthorizedOS(google.protobuf.Empty) returns (GetAuthorizedOSResponse) {
+    option (google.api.http) = {
+      get: "/license/v1/authorized_os"
+    };
+  }
+  // ...
+}
+
+message GetAuthorizedOSResponse {
+
+}
